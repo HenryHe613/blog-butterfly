@@ -1,0 +1,236 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Matery主题添加Artitalk | 南岩666のBlog</title><meta name="keywords" content="Hexo,Matery,Artitalk"><meta name="author" content="南岩"><meta name="copyright" content="南岩"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Matery主题添加Artitalk前言先上链接，这是我的说说界面：闲言碎语 有时候啊，hexo想发说说&#x2F;微语总是有点麻烦，这时候Artitalk出现了。 安装ArtitalkMatery主题没有自带Artitalk集成，所以要自己安装。 先生成一个说说的页面： 1hexo new page &quot;shuoshuo&quot;  然后在blog&#x2F;source&#x2F;下面出现了shuoshuo这个文"><meta property="og:type" content="article"><meta property="og:title" content="Matery主题添加Artitalk"><meta property="og:url" content="https://nanyan666.com/879a.html"><meta property="og:site_name" content="南岩666のBlog"><meta property="og:description" content="Matery主题添加Artitalk前言先上链接，这是我的说说界面：闲言碎语 有时候啊，hexo想发说说&#x2F;微语总是有点麻烦，这时候Artitalk出现了。 安装ArtitalkMatery主题没有自带Artitalk集成，所以要自己安装。 先生成一个说说的页面： 1hexo new page &quot;shuoshuo&quot;  然后在blog&#x2F;source&#x2F;下面出现了shuoshuo这个文"><meta property="og:locale" content="zh_CN"><meta property="og:image" content="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/20200710113833.png"><meta property="article:published_time" content="2020-07-10T11:33:22.000Z"><meta property="article:modified_time" content="2021-08-30T06:16:37.600Z"><meta property="article:author" content="南岩"><meta property="article:tag" content="Hexo"><meta property="article:tag" content="Matery"><meta property="article:tag" content="Artitalk"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/20200710113833.png"><link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/HenryHe613/Pic/20210821083431.png"><link rel="canonical" href="https://nanyan666.com/879a"><link rel="preconnect" href="//cdn.jsdelivr.net"><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""><link rel="preconnect" href="//hm.baidu.com"><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""><link rel="preconnect" href="//busuanzi.ibruce.info"><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload='this.media="all"'><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script");e.src="https://hm.baidu.com/hm.js?58974f3a494cbab640d3f378d27cd99a";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)}()</script><script async src="https://www.googletagmanager.com/gtag/js?id=UA-175176632-2"></script><script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","UA-175176632-2")</script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload='this.media="all"'><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"search.xml","languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: {"limitDay":30,"position":"top","messagePrev":"本篇文章更新于","messageNext":"天之前，文章内容与事实可能有些许不同。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 南岩","link":"链接: ","source":"来源: 南岩666のBlog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE={title:"Matery主题添加Artitalk",isPost:!0,isHome:!1,isHighlightShrink:!1,isToc:!0,postUpdate:"2021-08-30 06:16:37"}</script><noscript><style>#nav{opacity:1}.justified-gallery img{opacity:1}#post-meta time,#recent-posts time{display:inline!important}</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/henryhe613/cdn@latest/Hexo/background2.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/henryhe613/cdn@latest/Hexo/webkit-scrollbar.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/henryhe613/cdn@latest/Hexo/font.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/henryhe613/cdn@latest/Hexo/footer-transparent.css"><meta name="generator" content="Hexo 5.4.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://pic.baixiongz.com/2020/08/18/1bb6a000f567e.jpeg" onerror='onerror=null,src="/img/friend_404.gif"' alt="avatar"></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div></div><hr><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i> <span>主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i> <span>归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i> <span>标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i> <span>分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i> <span>友链</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-envelope"></i> <span>闲言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i> <span>关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image:url(https://cdn.jsdelivr.net/gh/henryhe613/pic/img/20200710113833.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">南岩666のBlog</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i> <span>搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i> <span>主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i> <span>归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i> <span>标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i> <span>分类</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i> <span>友链</span></a></div><div class="menus_item"><a class="site-page" href="/artitalk/"><i class="fa-fw fas fa-envelope"></i> <span>闲言</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i> <span>关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Matery主题添加Artitalk</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2020-07-10T11:33:22.000Z" title="发表于 2020-07-10 11:33:22">2020-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2021-08-30T06:16:37.600Z" title="更新于 2021-08-30 06:16:37">2021-08-30</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/Software/">Software</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" data-flag-title="Matery主题添加Artitalk"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="Matery主题添加Artitalk"><a href="#Matery主题添加Artitalk" class="headerlink" title="Matery主题添加Artitalk"></a>Matery主题添加Artitalk</h1><h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>先上链接，这是我的说说界面：<a target="_blank" rel="noopener" href="https://www.yelow.ga/shuoshuo/">闲言碎语</a></p><p>有时候啊，hexo想发说说/微语总是有点麻烦，这时候Artitalk出现了。</p><h1 id="安装Artitalk"><a href="#安装Artitalk" class="headerlink" title="安装Artitalk"></a>安装Artitalk</h1><p>Matery主题没有自带Artitalk集成，所以要自己安装。</p><p>先生成一个说说的页面：</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page <span class="string">&quot;shuoshuo&quot;</span></span><br></pre></td></tr></table></figure><p>然后在<code>blog/source/</code>下面出现了<code>shuoshuo</code>这个文件夹，里面有一个<code>index.md</code>文件。</p><p>打开这个文件，现在里面是这样的：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: shuoshuo</span><br><span class="line">date: 2020-06-05 11:15:37</span><br><span class="line">type: shuoshuo</span><br><span class="line">\-\-\-</span><br></pre></td></tr></table></figure><p>把<code>Front-Matery</code>改成这样：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 闲言</span><br><span class="line">date: 2020-06-05 11:15:37</span><br><span class="line">type: &quot;shuoshuo&quot;</span><br><span class="line">\-\-\-</span><br></pre></td></tr></table></figure><p>当然<code>title</code>你可以自定义哦</p><p>之前真的很头疼，<code>Artitalk</code>和<code>Valine</code>不能同时使用，因为两者的后台都是基于<code>LeanClou</code>d的，所以不能一起使用。我也曾因此放弃过搭建说说。</p><p>我也试过在<code>Front-Matter</code>里添加<code>comments: &#39;false&#39;</code>，但是这个方法仅适用于<code>Butterfly</code>主题，<code>Matery</code>主题没有这个配置。</p><p>但是前几天看到<code>Artitalk</code>官方的文档说解决了这个问题，我就再次尝试了。</p><p>和<code>Valine</code>一样，打开<code>LeanCloud</code>之后创建应用，之后我借用一下<code>Artitalk.js</code>的官方文档。</p><ol><li><p>绑定完成之后点击创建应用，应用名称随意，接着在结构化数据中创建<code>class</code>，命名为<code>shuoshuo</code>。</p></li><li><p>在你新建的应用中找到结构化数据下的用户。点击<code>添加用户</code>，输入想用的用户名及密码。</p></li><li><p>回到结构化数据中，点击<code>class</code>下的<code>shuoshuo</code>。找到<code>权限</code>，在<code>Class</code>访问权限中将<code>add_fields</code>以及<code>create</code>权限设置为指定用户，输入你刚才输入的用户名会自动匹配。为了安全起见，将<code>delete</code>和<code>update</code>也设置为跟它们一样的权限。</p></li><li><p>点击<code>class</code>下的<code>_User</code>添加列，列名称为<code>img</code>，默认值填上你这个账号想要用的头像url，这一项不进行配置，说说头像会显示为默认头像——Artitalk的logo。</p></li><li><p>在最菜单栏中找到<code>设置</code>-&gt;<code>应用keys</code>，记下来<code>AppID</code>和<code>AppKey</code>，一会会用。</p></li><li><p>最后将<code>_User</code>中的权限全部调为指定用户，或者数据创建者，为了保证不被篡改用户数据已达到强制发布说说。</p></li><li><p>因为<code>leancloud</code>功能的限制。若想同时使用<code>valine</code>和<code>artitalk</code>，请在<code>class</code>中添加名为<code>Comment</code>的<code>class</code>。不推荐在存储<code>valine</code>的应用中新建名为<code>shuoshuo</code>的<code>class</code>，可能会出现神奇的bug。</p></li></ol><p>之后在<code>shuoshuo</code>的<code>index.md</code>里添加如下代码：</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://libs.baidu.com/jquery/2.0.0/jquery.min.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="handlebars"><span class="xml"></span></span></span><br><span class="line"><span class="xml"><span class="handlebars">    var appID=&quot;&quot;; <span class="comment">&lt;!--这里填写刚刚获取的appID--&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="handlebars">    var appKEY=&quot;&quot;; <span class="comment">&lt;!--这里填写刚刚获取的appKEY--&gt;</span></span></span></span><br><span class="line"><span class="xml"><span class="handlebars">    </span></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;artitalk_main&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span> <span class="attr">src</span>=<span class="string">&quot;https://unpkg.com/artitalk&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure><p>如果出现特殊情况，我这里不一一解释/*其实我也不懂emmmm*/。最好是查看<code>Artitalk.js</code>的官方文档==&gt;<a target="_blank" rel="noopener" href="https://artitalk.js.org/faq.html#%F0%9F%94%A8-%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98">传送门</a></p><p>还有哈，有一些自定义功能可以到<code>Artitalk.js</code>的官方文档里查看，在这里==&gt;<a target="_blank" rel="noopener" href="https://artitalk.js.org/settings.html#%E5%BF%85%E5%A1%AB">传送门</a></p><p>但是<code>Artitalk</code>仍然不能使用。</p><h1 id="更新Valine"><a href="#更新Valine" class="headerlink" title="更新Valine"></a>更新Valine</h1><p>Artitalk的大佬说了，<code>Valine</code>里面的<code>av-min.js</code>干扰了<code>Artitalk</code>。而v1.4.x版的<code>Valine</code>可以不需要<code>av-min.js</code>。于是我得把<code>Valine</code>升级一下。</p><p>由于<code>Valine</code>是集成在<code>Matery</code>主题里的，所以升级可折腾死我了。</p><p>到Github上找到<code>Valine</code>：<a target="_blank" rel="noopener" href="https://github.com/xCss/Valine">传送门</a></p><p>复制https的Git地址，到<a target="_blank" rel="noopener" href="http://g.widyun.com/">GitHub代下载服务</a>快速下载//真的没有打广告</p><p>然后解压，在<code>dist</code>文件夹里找到<code>Valine.min.js</code>，复制并替换blog\themes\matery\source\libs\valine里面的<code>Valine.min.js</code></p><p>并删除<code>av-min.js</code>，然后<code>hexo cl&amp;&amp;hexo g&amp;&amp;hexo s</code>。查看的地址是 [https://{you blog’s site}/shuoshuo](https://{you blog’s site}/shuoshuo)</p><p>以下是我的效果图，但是我觉得这个样子很难看，这些画红框框的地方我不喜欢。</p><p><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/20200710130542.png"></p><p>更不能忍受的是，最下面的文章跳转吧我的appID和appKey给泄露了。不但不美观，还有点危险。</p><p><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/20200710131031.png"></p><h1 id="优化说说界面"><a href="#优化说说界面" class="headerlink" title="优化说说界面"></a>优化说说界面</h1><p>我再想了一下，由于我没有给<code>shuoshuo</code>定义页面，所以它就按照<code>post</code>的样式来了。</p><p>在<code>Front-Matter</code>里加上这个一行：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">layout: &quot;shuoshuo&quot;</span><br></pre></td></tr></table></figure><p>然后在主题文件夹下找到<code>\matery\layout\</code>，在里面新建一个<code>shuoshuo.ejs</code>文件。</p><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span><span class="css"></span></span><br><span class="line"><span class="css">    <span class="comment">/* don&#x27;t remove. */</span></span></span><br><span class="line"><span class="css">    <span class="selector-class">.about-cover</span> &#123;</span></span><br><span class="line"><span class="css">        <span class="attribute">height</span>: <span class="number">75vh</span>;</span></span><br><span class="line"><span class="css">    &#125;</span></span><br><span class="line"><span class="css"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"></span><br><span class="line">&lt;%- partial(&#x27;_partial/bg-cover&#x27;) %&gt;</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">main</span> <span class="attr">class</span>=<span class="string">&quot;content&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;aboutme&quot;</span> <span class="attr">class</span>=<span class="string">&quot;container about-container&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line">     <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-content&quot;</span>&gt;</span></span><br><span class="line">         <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card-content article-card-content&quot;</span>&gt;</span></span><br><span class="line">             <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;title center-align&quot;</span> <span class="attr">data-aos</span>=<span class="string">&quot;zoom-in-up&quot;</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">&quot;fa fa-comment&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="symbol">&amp;nbsp;</span><span class="symbol">&amp;nbsp;</span>&lt;%- __(&#x27;闲言碎语&#x27;) %&gt;</span><br><span class="line">              <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">                 <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">&quot;articleContent&quot;</span> <span class="attr">data-aos</span>=<span class="string">&quot;fade-up&quot;</span>&gt;</span></span><br><span class="line">                     &lt;%- page.content %&gt;</span><br><span class="line">                 <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">           <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;card&quot;</span>&gt;</span></span><br><span class="line"></span><br><span class="line">            &lt;% if (theme.gitalk &amp;&amp; theme.gitalk.enable) &#123; %&gt;</span><br><span class="line">            &lt;%- partial(&#x27;_partial/gitalk&#x27;) %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">            &lt;% if (theme.gitment.enable) &#123; %&gt;</span><br><span class="line">            &lt;%- partial(&#x27;_partial/gitment&#x27;) %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">            &lt;% if (theme.disqus.enable) &#123; %&gt;</span><br><span class="line">            &lt;%- partial(&#x27;_partial/disqus&#x27;) %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">            &lt;% if (theme.livere &amp;&amp; theme.livere.enable) &#123; %&gt;</span><br><span class="line">            &lt;%- partial(&#x27;_partial/livere&#x27;) %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">            &lt;% if (theme.valine &amp;&amp; theme.valine.enable) &#123; %&gt;</span><br><span class="line">            &lt;%- partial(&#x27;_partial/valine&#x27;) %&gt;</span><br><span class="line">            &lt;% &#125; %&gt;</span><br><span class="line"></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">main</span>&gt;</span></span><br></pre></td></tr></table></figure><blockquote><p>这个代码是我从<code>about.ejs</code>里面复制来的，经过删减和添加，可能效果还是不怎么样，但是毕竟算是我捣鼓出来的emmm。有不合理之处请赐教。</p></blockquote><p>最后可以<code>hexo cl&amp;&amp;hexo g&amp;&amp;hexo s</code>看看，并试着<code>hexo d</code>了。</p><h1 id="且慢！！！"><a href="#且慢！！！" class="headerlink" title="且慢！！！"></a>且慢！！！</h1><p>我忘了一个很重要的事，要在主题文件的_config.yml里添加这么一行：</p><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">说说:</span></span><br><span class="line">  <span class="attr">url:</span> <span class="string">/shuoshuo</span></span><br><span class="line">  <span class="attr">icon:</span> <span class="string">fa</span> <span class="string">fa-comment</span></span><br></pre></td></tr></table></figure><p>这样才能在顶部菜单栏里看到这个页面。</p></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者:</span> <span class="post-copyright-info"><a href="mailto:undefined">南岩</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接:</span> <span class="post-copyright-info"><a href="https://nanyan666.com/879a.html">https://nanyan666.com/879a.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明:</span> <span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://nanyan666.com" target="_blank">南岩666のBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Hexo/">Hexo</a><a class="post-meta__tags" href="/tags/Matery/">Matery</a><a class="post-meta__tags" href="/tags/Artitalk/">Artitalk</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/20200710113833.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload='this.media="all"'><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/7fe9.html"><img class="prev-cover" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://pic.baixiongz.com/2020/08/01/e2b6025345335.jpg" onerror='onerror=null,src="/img/404.jpg"' alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">利用Coding部署Hexo</div></div></a></div><div class="next-post pull-right"><a href="/u7r6.html"><img class="next-cover" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/20200710200652.png" onerror='onerror=null,src="/img/404.jpg"' alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">获取微软应用程序的API</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i> <span>相关推荐</span></div><div class="relatedPosts-list"><div><a target="_blank" rel="noopener" href="//e978.html" title="Matery主题优化"><img class="cover" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://pic.baixiongz.com/2020/08/02/69707c4d7cb91.png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-08-30</div><div class="title">Matery主题优化</div></div></a></div><div><a target="_blank" rel="noopener" href="//876.html" title="Hexo链接优化"><img class="cover" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/4602746.jfif" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-08-30</div><div class="title">Hexo链接优化</div></div></a></div><div><a target="_blank" rel="noopener" href="//f59b.html" title="Loading"><img class="cover" src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/henryhe613/pic/img/屏幕截图(2).png" alt="cover"><div class="content is-center"><div class="date"><i class="fas fa-history fa-fw"></i> 2021-08-30</div><div class="title">Loading</div></div></a></div></div></div><hr><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i> <span>评论</span></div><div id="comment-switch"><span class="first-comment">Valine</span><span class="switch-btn"></span><span class="second-comment">Gitalk</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div><div><div id="gitalk-container"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://pic.baixiongz.com/2020/08/18/1bb6a000f567e.jpeg" onerror='this.onerror=null,this.src="/img/friend_404.gif"' alt="avatar"></div><div class="author-info__name">南岩</div><div class="author-info__description">南岩的个人博客,记录点滴生活,分享技术经验。</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">35</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">36</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">3</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/HenryHe613/"><i class="fab fa-github"></i><span>Star Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HenryHe613" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:henryhe613@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">时隔11个月，南岩又开始了Ta的博客生活。</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Matery%E4%B8%BB%E9%A2%98%E6%B7%BB%E5%8A%A0Artitalk"><span class="toc-number">1.</span> <span class="toc-text">Matery主题添加Artitalk</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">2.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%89%E8%A3%85Artitalk"><span class="toc-number">3.</span> <span class="toc-text">安装Artitalk</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9B%B4%E6%96%B0Valine"><span class="toc-number">4.</span> <span class="toc-text">更新Valine</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BC%98%E5%8C%96%E8%AF%B4%E8%AF%B4%E7%95%8C%E9%9D%A2"><span class="toc-number">5.</span> <span class="toc-text">优化说说界面</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%94%E6%85%A2%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-number">6.</span> <span class="toc-text">且慢！！！</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/50459.html" title="开学啦"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/HenryHe613/Pic/20210830141151.png" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="开学啦"></a><div class="content"><a class="title" href="/50459.html" title="开学啦">开学啦</a><time datetime="2021-08-30T13:52:48.000Z" title="发表于 2021-08-30 13:52:48">2021-08-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/16174.html" title="晚安，暑假。"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/HenryHe613/Pic/IDR_CB_NTP_BACKGROUND_FROM_CALLBACK.png" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="晚安，暑假。"></a><div class="content"><a class="title" href="/16174.html" title="晚安，暑假。">晚安，暑假。</a><time datetime="2021-08-20T19:02:07.000Z" title="发表于 2021-08-20 19:02:07">2021-08-20</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/29825.html" title="9月26日周末摘记"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://cdn.jsdelivr.net/gh/HenryHe613/Pic/39b3a7eda0525.jpeg" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="9月26日周末摘记"></a><div class="content"><a class="title" href="/29825.html" title="9月26日周末摘记">9月26日周末摘记</a><time datetime="2020-09-26T18:51:37.000Z" title="发表于 2020-09-26 18:51:37">2020-09-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/1695.html" title="MarkDown常用语法"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://pic.baixiongz.com/2020/08/13/3d6f3fe9ccccb.png" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="MarkDown常用语法"></a><div class="content"><a class="title" href="/1695.html" title="MarkDown常用语法">MarkDown常用语法</a><time datetime="2020-08-12T13:13:56.000Z" title="发表于 2020-08-12 13:13:56">2020-08-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/ay84.html" title="美化CMD"><img src="data:image/gif;base64,R0lGODdhAQABAPAAAMPDwwAAACwAAAAAAQABAAACAkQBADs=" data-lazy-src="https://pic.baixiongz.com/2020/08/12/1d828d918e56d.png" onerror='this.onerror=null,this.src="/img/404.jpg"' alt="美化CMD"></a><div class="content"><a class="title" href="/ay84.html" title="美化CMD">美化CMD</a><time datetime="2020-08-12T11:18:45.000Z" title="发表于 2020-08-12 11:18:45">2020-08-12</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By 南岩</div><div class="framework-info"><span>框架</span> <a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题</span> <a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><div class="search-dialog__title" id="local-search-title">本地搜索</div><div id="local-input-panel"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"></div></div></div><hr><div id="local-search-results"></div><span class="search-close-button"><i class="fas fa-times"></i></span></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'vV8xrCftYBqSQPi5d9VjqpCa-MdYXbMMI',
+      appKey: 'laabeUqxowanTlVwo4LsyxKI',
+      placeholder: 'Please leave your footprints',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: true,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      requiredFields: ["nick,mail"],
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script>function addGitalkSource () {
+  const ele = document.createElement('link')
+  ele.rel = 'stylesheet'
+  ele.href= 'https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css'
+  document.getElementsByTagName('head')[0].appendChild(ele)
+}
+
+function loadGitalk () {
+  function initGitalk () {
+    var gitalk = new Gitalk(Object.assign({
+      clientID: '3fad84a91c4f904a00a7',
+      clientSecret: '7ea5278f3827c82e8813d0f67bcb8e813e615e39',
+      repo: 'henryhe613',
+      owner: 'HenryHe613',
+      admin: ['HenryHe613'],
+      id: '66ef33ef4c38b2b95f15e8c462fdefc3',
+      language: 'zh-CN',
+      perPage: 10,
+      distractionFreeMode: false,
+      pagerDirection: 'last',
+      createIssueManually: false,
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  if (typeof Gitalk === 'function') initGitalk()
+  else {
+    addGitalkSource()
+    getScript('https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js').then(initGitalk)
+  }
+}
+
+function commentCount(n){
+  let isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+  if (isCommentCount) {
+    isCommentCount.innerHTML= n
+  }
+}
+
+if ('Valine' === 'Gitalk' || !true) {
+  if (true) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+  else loadGitalk()
+} else {
+  function loadOtherComment () {
+    loadGitalk()
+  }
+}</script></div><script src="https://cdn.jsdelivr.net/gh/henryhe613/cdn@latest/Hexo/baidu-auto-push.js"></script><script src="https://cdn.jsdelivr.net/gh/henryhe613/cdn@latest/Hexo/banner.js"></script><canvas class="fireworks" mobile="false"></canvas><script src="/js/third-party/fireworks.js"></script><script src="/js/third-party/activate-power-mode.js"></script><script>POWERMODE.colorful=!0,POWERMODE.shake=!1,POWERMODE.mobile=!1,document.body.addEventListener("input",POWERMODE)</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
