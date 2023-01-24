@@ -1,0 +1,542 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Pandas模块：高中技术备考看这个就够了！ | 南岩 のBlog</title><meta name="author" content="南岩"><meta name="copyright" content="南岩"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="适当举例，如有雷同，纯属巧合！！！"><link rel="shortcut icon" href="https://s1.ax1x.com/2022/05/18/OI5XU1.jpg"><link rel="canonical" href="https://blog.nanyan.cc/posts/9358.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin=""/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="/pluginsSrc/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/node-snackbar/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="/pluginsSrc/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c37198341c5123d6cd97e74b1e96ae0e";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=G-PHSQ6569MJ"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-PHSQ6569MJ');
+</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":200},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#1f1f1f","position":"top-center"},
+  source: {
+    justifiedGallery: {
+      js: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: '/pluginsSrc/flickr-justified-gallery/dist/fjGallery.css'
+    }
+  },
+  isPhotoFigcaption: true,
+  islazyload: true,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Pandas模块：高中技术备考看这个就够了！',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-05-19 15:41:00'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = url => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      link.onload = () => resolve()
+      link.onerror = () => reject()
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="baidu-site-verification" content="code-XfNx3VCcyL" /><link rel="stylrsheet" href="https://atasgayb.coding.net/p/public/d/nothing-but-scip/git/raw/master/cdn/background.css"><div class="aplayer no-destroy" data-id="7444015972" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-preload="auto" data-autoplay="false"> </div><meta name="generator" content="Hexo 6.3.0"></head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/05/18/OI5XU1.jpg" onerror="onerror=null;src='https://atasgayb.coding.net/p/public/d/nothing-but-scip/git/raw/master/404.jpg'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travellings.link"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://s1.ax1x.com/2022/05/18/OIIkVA.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="南岩 のBlog"><span class="site-name">南岩 のBlog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" target="_blank" rel="noopener" href="https://travellings.link"><i class="fa-fw fas fa-subway"></i><span> 开往</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Pandas模块：高中技术备考看这个就够了！</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-05-17T20:35:18.000Z" title="发表于 2022-05-17 20:35:18">2022-05-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-05-19T15:41:00.000Z" title="更新于 2022-05-19 15:41:00">2022-05-19</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E6%95%99%E7%A8%8B/">教程</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">5k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>20分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Pandas模块：高中技术备考看这个就够了！"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>在普通高中教科书技术必修一中，第四章数据分析的Pandas模块一直是一个难点。不容易讲透，学生不容易搞懂，教程的编写也没有给出适当的举例。很多情况下需要学生自己上机打代码，但是种种原因把限制在课本中。</p>
+<p>今天我们就对照着教程，把Pandas模块每一个函数搞懂。</p>
+<p>本文会进行适当举例，举例<strong>如有雷同，纯属巧合</strong>。</p>
+<hr>
+<h1 id="导入Pandas模块"><a href="#导入Pandas模块" class="headerlink" title="导入Pandas模块"></a>导入Pandas模块</h1><p>如果你已经成功安装了Pandas模块，那么你可以在IDE中导入Pandas模块进行数据处理。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas   <span class="comment">#导入pandas模块</span></span><br></pre></td></tr></table></figure>
+
+<p>如果这样import，那么接下来使用pandas的子模块，必须在头部加上pandas，如：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">s1=pandas.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])   <span class="comment">#创捷一个Series对象，我们后面讲它</span></span><br></pre></td></tr></table></figure>
+
+<p>当然你也可以只导入Pandas的一个子模块，当然用这个子模块的时候就可以直接使用了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series</span><br><span class="line">s1=Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span>    <span class="number">1</span>      </span><br><span class="line"><span class="number">1</span>    <span class="number">2</span>      </span><br><span class="line"><span class="number">2</span>    <span class="number">3</span>      </span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+
+<p>如果需要同时使用Pandas的两个子模块模块，又觉得每次都要打Pandas这个头很烦，那么可以这样导入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd  <span class="comment">#把pandas模块导入为pd，当然名字可以任意取</span></span><br><span class="line">s1=pd.Series([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line">df1=pd.DataFrame(&#123;<span class="string">&quot;姓名&quot;</span>:[<span class="string">&quot;高明&quot;</span>,<span class="string">&quot;地心&quot;</span>],<span class="string">&quot;语文&quot;</span>:[<span class="number">113</span>,<span class="number">125</span>],<span class="string">&quot;数学&quot;</span>:[<span class="number">98</span>,<span class="number">145</span>]&#125;,columns=[<span class="string">&quot;姓名&quot;</span>,<span class="string">&quot;语文&quot;</span>,<span class="string">&quot;数学&quot;</span>])</span><br><span class="line">     <span class="comment">#这是DataFrame模块，我们后面慢慢讲它</span></span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"><span class="built_in">print</span>(df1)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span>    <span class="number">1</span></span><br><span class="line"><span class="number">1</span>    <span class="number">2</span></span><br><span class="line"><span class="number">2</span>    <span class="number">3</span></span><br><span class="line">dtype: int64</span><br><span class="line">   姓名   语文   数学</span><br><span class="line"><span class="number">0</span>  高明  <span class="number">113</span>   <span class="number">98</span></span><br><span class="line"><span class="number">1</span>  地心  <span class="number">125</span>  <span class="number">145</span></span><br></pre></td></tr></table></figure>
+
+<p>好了，现在你已经掌握怎么导入Pandas模块了！</p>
+<hr>
+<h1 id="Series子模块"><a href="#Series子模块" class="headerlink" title="Series子模块"></a>Series子模块</h1><p>课本中对Series模块的讲解比较透彻，我这里就简单的抄点课本嘿嘿~</p>
+<p>Series是一种一维的数据结构，包含一个数组的数据和一个与数据关联的索引( index )， 索引值默认是从0起递增的整数。列表、字典等可以用来创建Series数据结构，与列表不同的是，Series 的索引可以指定，类型可以为字符串型。</p>
+<p>看完课本的介绍，那么我们来实操一下，我们把同学们的信息用Series存储起来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> Series</span><br><span class="line">s1=Series([<span class="string">&quot;高明&quot;</span>,<span class="string">&quot;章鱼&quot;</span>,<span class="string">&quot;地心&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span>    高明</span><br><span class="line"><span class="number">1</span>    章鱼</span><br><span class="line"><span class="number">2</span>    地心</span><br><span class="line">dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<p>那么我们来通过索引访问一下单个数据，我们需要找到第二个（索引为1）同学的名字。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(s1[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">章鱼</span><br></pre></td></tr></table></figure>
+
+<p>索引1和”章鱼”对应，输出了”章鱼”，没有问题。那么我们继续。<br>现在我们来更改一下Series里面的同学，第一个同学改成二哥</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s1[<span class="number">0</span>]=<span class="string">&quot;二哥&quot;</span></span><br><span class="line"><span class="built_in">print</span>(s1)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span>    二哥    </span><br><span class="line"><span class="number">1</span>    章鱼    </span><br><span class="line"><span class="number">2</span>    地心    </span><br><span class="line">dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<p>更改Series里的数据是不是和更新列表元素十分相似？</p>
+<p>根据课本里的这句话：</p>
+<blockquote>
+<p>列表不同的是，Series 的索引可以指定，类型可以为字符串型。</p>
+</blockquote>
+<p>那么我们也来更改一下索引，用名字来做索引，用性别来做值。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s2=Series([<span class="string">&quot;female&quot;</span>,<span class="string">&quot;male&quot;</span>,<span class="string">&quot;male&quot;</span>],index=[<span class="string">&quot;高明&quot;</span>,<span class="string">&quot;章鱼&quot;</span>,<span class="string">&quot;地心&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(s2)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">高明    female</span><br><span class="line">章鱼      male</span><br><span class="line">地心      male</span><br><span class="line">dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到索引变成了字符串，应用的时候索引也要用字符串，如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(s2[<span class="string">&quot;地心&quot;</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">male</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>这里要提醒一下，如果索引个数和数据个数不匹配，运行的时候会报错！！！</p>
+</blockquote>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://pic4.zhimg.com/80/v2-ef6a04d22df16f0a9e9f0350e5595a9b_720w.jpg"></p>
+<p>这里有个很有意思的现象，就是索引不一定要独一无二，也就是说，索引是可以重复的。我们再举个例子，把性别作为索引，名字作为值：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">s3=Series([<span class="string">&quot;高明&quot;</span>,<span class="string">&quot;章鱼&quot;</span>,<span class="string">&quot;地心&quot;</span>],index=[<span class="string">&quot;female&quot;</span>,<span class="string">&quot;male&quot;</span>,<span class="string">&quot;male&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(s3)</span><br><span class="line"><span class="built_in">print</span>(s3[male])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">female    高明</span><br><span class="line">male      章鱼</span><br><span class="line">male      地心</span><br><span class="line">dtype: <span class="built_in">object</span></span><br><span class="line">male    章鱼</span><br><span class="line">male    地心</span><br><span class="line">dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<p>Python不但不会报错，还会把所有符合索引的内容都输出来。</p>
+<p>我现在再抄一下课本嘿嘿，</p>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>Series的下标索引，其值默认是从0起递增的整数</td>
+</tr>
+<tr>
+<td>values</td>
+<td>存放Series值的一个数组</td>
+</tr>
+</tbody></table>
+<p>其中还有查看index、values属性值的方法：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s1.index:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s2.values:</span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">female</span><br><span class="line">male</span><br><span class="line">male</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> s3:   <span class="comment">#这里s3默认就是指代values</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">高明</span><br><span class="line">章鱼</span><br><span class="line">地心</span><br></pre></td></tr></table></figure>
+
+<p>好啦，Series的讲解就到这里，是不是很轻松哇？</p>
+<hr>
+<h1 id="DataFrame子模块"><a href="#DataFrame子模块" class="headerlink" title="DataFrame子模块"></a>DataFrame子模块</h1><p>DataFrame是Pandas模块的难点，函数比较多。</p>
+<p>DataFrame是一种二维的数据结构，由1个索引列（index）和若干个数据列组成，每个数据列可以是不同的类型。DataFrame可以看作是共享同一个index的Series的集合。创建DataFrame对象的方法很多，通常用一个相等 长度的列表或字典来创建。</p>
+<p>期中考结束了，学校发了成绩单下来，同学们十分兴奋，老师用DataFrame给他们分析成绩。</p>
+<h2 id="构建DataFrame对象"><a href="#构建DataFrame对象" class="headerlink" title="构建DataFrame对象"></a>构建DataFrame对象</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> pandas <span class="keyword">import</span> DataFrame</span><br><span class="line">df1=DataFrame(&#123;</span><br><span class="line">    <span class="string">&quot;姓名&quot;</span>:[<span class="string">&quot;高明&quot;</span>,<span class="string">&quot;章鱼&quot;</span>,<span class="string">&quot;地心&quot;</span>,<span class="string">&quot;琐碎&quot;</span>,<span class="string">&quot;石宝&quot;</span>,<span class="string">&quot;二哥&quot;</span>,<span class="string">&quot;如意&quot;</span>],</span><br><span class="line">    <span class="string">&quot;语文&quot;</span>:[<span class="number">93</span>,<span class="number">109</span>,<span class="number">103</span>,<span class="number">125</span>,<span class="number">118</span>,<span class="number">113</span>,<span class="number">98</span>],</span><br><span class="line">    <span class="string">&quot;数学&quot;</span>:[<span class="number">98</span>,<span class="number">145</span>,<span class="number">143</span>,<span class="number">134</span>,<span class="number">122</span>,<span class="number">103</span>,<span class="number">67</span>],</span><br><span class="line">    <span class="string">&quot;英语&quot;</span>:[<span class="number">96</span>,<span class="number">105</span>,<span class="number">134</span>,<span class="number">119</span>,<span class="number">105</span>,<span class="number">135</span>,<span class="number">90</span>],</span><br><span class="line">    <span class="string">&quot;物理&quot;</span>:[<span class="number">43</span>,<span class="number">58</span>,<span class="number">95</span>,<span class="number">68</span>,<span class="number">79</span>,<span class="number">67</span>,<span class="number">45</span>],</span><br><span class="line">    <span class="string">&quot;化学&quot;</span>:[<span class="number">74</span>,<span class="number">41</span>,<span class="number">64</span>,<span class="number">52</span>,<span class="number">74</span>,<span class="number">52</span>,<span class="number">58</span>],</span><br><span class="line">    <span class="string">&quot;生物&quot;</span>:[<span class="number">71</span>,<span class="number">78</span>,<span class="number">93</span>,<span class="number">78</span>,<span class="number">77</span>,<span class="number">60</span>,<span class="number">64</span>],</span><br><span class="line">    <span class="string">&quot;历史&quot;</span>:[<span class="number">66</span>,<span class="number">52</span>,<span class="number">41</span>,<span class="number">52</span>,<span class="number">57</span>,<span class="number">50</span>,<span class="number">59</span>],</span><br><span class="line">    <span class="string">&quot;地理&quot;</span>:[<span class="number">57</span>,<span class="number">63</span>,<span class="number">69</span>,<span class="number">84</span>,<span class="number">51</span>,<span class="number">51</span>,<span class="number">62</span>],</span><br><span class="line">    <span class="string">&quot;政治&quot;</span>:[<span class="number">44</span>,<span class="number">41</span>,<span class="number">42</span>,<span class="number">65</span>,<span class="number">48</span>,<span class="number">48</span>,<span class="number">49</span>],</span><br><span class="line">    <span class="string">&quot;技术&quot;</span>:[<span class="number">85</span>,<span class="number">78</span>,<span class="number">60</span>,<span class="number">88</span>,<span class="number">59</span>,<span class="number">64</span>,<span class="number">67</span>],</span><br><span class="line">    &#125;,</span><br><span class="line">    columns=[<span class="string">&quot;姓名&quot;</span>,<span class="string">&quot;语文&quot;</span>,<span class="string">&quot;数学&quot;</span>,<span class="string">&quot;英语&quot;</span>,<span class="string">&quot;物理&quot;</span>,<span class="string">&quot;化学&quot;</span>,<span class="string">&quot;生物&quot;</span>,<span class="string">&quot;历史&quot;</span>,<span class="string">&quot;地理&quot;</span>,<span class="string">&quot;政治&quot;</span>,<span class="string">&quot;技术&quot;</span>])</span><br><span class="line"><span class="built_in">print</span>(df1)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">   姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">145</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br><span class="line"><span class="number">2</span>  地心  <span class="number">103</span>  <span class="number">143</span>  <span class="number">134</span>  <span class="number">95</span>  <span class="number">64</span>  <span class="number">93</span>  <span class="number">41</span>  <span class="number">69</span>  <span class="number">42</span>  <span class="number">60</span></span><br><span class="line"><span class="number">3</span>  琐碎  <span class="number">125</span>  <span class="number">134</span>  <span class="number">119</span>  <span class="number">68</span>  <span class="number">52</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">84</span>  <span class="number">65</span>  <span class="number">88</span></span><br><span class="line"><span class="number">4</span>  石宝  <span class="number">118</span>  <span class="number">122</span>  <span class="number">105</span>  <span class="number">79</span>  <span class="number">74</span>  <span class="number">77</span>  <span class="number">57</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">59</span></span><br><span class="line"><span class="number">5</span>  二哥  <span class="number">113</span>  <span class="number">103</span>  <span class="number">135</span>  <span class="number">67</span>  <span class="number">52</span>  <span class="number">60</span>  <span class="number">50</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">64</span></span><br><span class="line"><span class="number">6</span>  如意   <span class="number">98</span>   <span class="number">67</span>   <span class="number">90</span>  <span class="number">45</span>  <span class="number">58</span>  <span class="number">64</span>  <span class="number">59</span>  <span class="number">62</span>  <span class="number">49</span>  <span class="number">67</span></span><br></pre></td></tr></table></figure>
+
+<p>这是我们通过字典来构建DataFrame对象的。老师觉得手动输入很麻烦，那么我们也可以从Excel表格或者CSV表格中导入数据。</p>
+<h2 id="从外部数据构建DataFrame"><a href="#从外部数据构建DataFrame" class="headerlink" title="从外部数据构建DataFrame"></a>从外部数据构建DataFrame</h2><p>这是从Excel表格导入的。注意，表格文件要和python文件位于同一个文件夹。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line">df2=pd.read_excel(<span class="string">&quot;成绩.xlsx&quot;</span>)   <span class="comment">#从Excel表格导入</span></span><br><span class="line"><span class="built_in">print</span>(df2)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">   Unnamed: <span class="number">0</span>  姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>           <span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>           <span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">145</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br><span class="line"><span class="number">2</span>           <span class="number">2</span>  地心  <span class="number">103</span>  <span class="number">143</span>  <span class="number">134</span>  <span class="number">95</span>  <span class="number">64</span>  <span class="number">93</span>  <span class="number">41</span>  <span class="number">69</span>  <span class="number">42</span>  <span class="number">60</span></span><br><span class="line"><span class="number">3</span>           <span class="number">3</span>  琐碎  <span class="number">125</span>  <span class="number">134</span>  <span class="number">119</span>  <span class="number">68</span>  <span class="number">52</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">84</span>  <span class="number">65</span>  <span class="number">88</span></span><br><span class="line"><span class="number">4</span>           <span class="number">4</span>  石宝  <span class="number">118</span>  <span class="number">122</span>  <span class="number">105</span>  <span class="number">79</span>  <span class="number">74</span>  <span class="number">77</span>  <span class="number">57</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">59</span></span><br><span class="line"><span class="number">5</span>           <span class="number">5</span>  二哥  <span class="number">113</span>  <span class="number">103</span>  <span class="number">135</span>  <span class="number">67</span>  <span class="number">52</span>  <span class="number">60</span>  <span class="number">50</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">64</span></span><br><span class="line"><span class="number">6</span>           <span class="number">6</span>  如意   <span class="number">98</span>   <span class="number">67</span>   <span class="number">90</span>  <span class="number">45</span>  <span class="number">58</span>  <span class="number">64</span>  <span class="number">59</span>  <span class="number">62</span>  <span class="number">49</span>  <span class="number">67</span></span><br></pre></td></tr></table></figure>
+
+<p>如果你是想从CSV表格导入，也没有问题。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">df2=pd.read_csv(<span class="string">&quot;成绩.csv&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df2)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">   Unnamed: <span class="number">0</span>  姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>           <span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>           <span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">145</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br><span class="line"><span class="number">2</span>           <span class="number">2</span>  地心  <span class="number">103</span>  <span class="number">143</span>  <span class="number">134</span>  <span class="number">95</span>  <span class="number">64</span>  <span class="number">93</span>  <span class="number">41</span>  <span class="number">69</span>  <span class="number">42</span>  <span class="number">60</span></span><br><span class="line"><span class="number">3</span>           <span class="number">3</span>  琐碎  <span class="number">125</span>  <span class="number">134</span>  <span class="number">119</span>  <span class="number">68</span>  <span class="number">52</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">84</span>  <span class="number">65</span>  <span class="number">88</span></span><br><span class="line"><span class="number">4</span>           <span class="number">4</span>  石宝  <span class="number">118</span>  <span class="number">122</span>  <span class="number">105</span>  <span class="number">79</span>  <span class="number">74</span>  <span class="number">77</span>  <span class="number">57</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">59</span></span><br><span class="line"><span class="number">5</span>           <span class="number">5</span>  二哥  <span class="number">113</span>  <span class="number">103</span>  <span class="number">135</span>  <span class="number">67</span>  <span class="number">52</span>  <span class="number">60</span>  <span class="number">50</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">64</span></span><br><span class="line"><span class="number">6</span>           <span class="number">6</span>  如意   <span class="number">98</span>   <span class="number">67</span>   <span class="number">90</span>  <span class="number">45</span>  <span class="number">58</span>  <span class="number">64</span>  <span class="number">59</span>  <span class="number">62</span>  <span class="number">49</span>  <span class="number">67</span></span><br></pre></td></tr></table></figure>
+
+<p>如果导入过程中出现乱码，记得加上<code>UTF-8编码扩展</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df2=pd.read_csv(<span class="string">&quot;成绩.csv&quot;</span>,encoding=<span class="string">&#x27;UTF8&#x27;</span>)</span><br><span class="line"><span class="built_in">print</span>(df2)</span><br></pre></td></tr></table></figure>
+
+<h2 id="导出DataFrame数据"><a href="#导出DataFrame数据" class="headerlink" title="导出DataFrame数据"></a>导出DataFrame数据</h2><p>老师处理完数据，需要导出。导出只用到两个函数，分别是to_excel()和to_csv()。在使用的时候一定要记得加上扩展名。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df1.to_csv(<span class="string">&quot;成绩.csv&quot;</span>)</span><br><span class="line">df1.to_excel(<span class="string">&quot;成绩.xlsx&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>导出的时候控制台不会有显示。如果已经有这个文件，那么在导出的时候会把原先的文件覆盖掉。</p>
+<h2 id="DataFrame对象常用属性"><a href="#DataFrame对象常用属性" class="headerlink" title="DataFrame对象常用属性"></a>DataFrame对象常用属性</h2><h2 id="这一小节就是抄课本啦嘿嘿"><a href="#这一小节就是抄课本啦嘿嘿" class="headerlink" title="这一小节就是抄课本啦嘿嘿"></a>这一小节就是抄课本啦嘿嘿</h2><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>index</td>
+<td>DataFrame的行索引</td>
+</tr>
+<tr>
+<td>columns</td>
+<td>存放各列的列标题</td>
+</tr>
+<tr>
+<td>values</td>
+<td>存放值的二维数据</td>
+</tr>
+<tr>
+<td>T</td>
+<td>行列转置</td>
+</tr>
+</tbody></table>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df1.index:     <span class="comment">#输出DataFrame的行索引</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;我是可爱的分隔符~&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df1.columns:   <span class="comment">#输出DataFrame的列索引</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;我是可爱的分隔符~&quot;</span>)</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> df1.values:    <span class="comment">#输出DataFrame中的所有值</span></span><br><span class="line">    <span class="built_in">print</span>(i)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;我是可爱的分隔符~&quot;</span>)</span><br><span class="line">df1.T                   <span class="comment">#行列转置</span></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;我是可爱的分隔符~&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;我是可爱的分隔符~&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1.T)</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span></span><br><span class="line"><span class="number">1</span></span><br><span class="line"><span class="number">2</span></span><br><span class="line"><span class="number">3</span></span><br><span class="line"><span class="number">4</span></span><br><span class="line"><span class="number">5</span></span><br><span class="line"><span class="number">6</span></span><br><span class="line">我是可爱的分隔符~</span><br><span class="line">姓名</span><br><span class="line">语文</span><br><span class="line">数学</span><br><span class="line">英语</span><br><span class="line">物理</span><br><span class="line">化学</span><br><span class="line">生物</span><br><span class="line">历史</span><br><span class="line">地理</span><br><span class="line">政治</span><br><span class="line">技术</span><br><span class="line">我是可爱的分隔符~</span><br><span class="line">[<span class="string">&#x27;高明&#x27;</span> <span class="number">93</span> <span class="number">98</span> <span class="number">96</span> <span class="number">43</span> <span class="number">74</span> <span class="number">71</span> <span class="number">66</span> <span class="number">57</span> <span class="number">44</span> <span class="number">85</span>]</span><br><span class="line">[<span class="string">&#x27;章鱼&#x27;</span> <span class="number">109</span> <span class="number">145</span> <span class="number">105</span> <span class="number">58</span> <span class="number">41</span> <span class="number">78</span> <span class="number">52</span> <span class="number">63</span> <span class="number">41</span> <span class="number">78</span>]</span><br><span class="line">[<span class="string">&#x27;地心&#x27;</span> <span class="number">103</span> <span class="number">143</span> <span class="number">134</span> <span class="number">95</span> <span class="number">64</span> <span class="number">93</span> <span class="number">41</span> <span class="number">69</span> <span class="number">42</span> <span class="number">60</span>]</span><br><span class="line">[<span class="string">&#x27;琐碎&#x27;</span> <span class="number">125</span> <span class="number">134</span> <span class="number">119</span> <span class="number">68</span> <span class="number">52</span> <span class="number">78</span> <span class="number">52</span> <span class="number">84</span> <span class="number">65</span> <span class="number">88</span>]</span><br><span class="line">[<span class="string">&#x27;石宝&#x27;</span> <span class="number">118</span> <span class="number">122</span> <span class="number">105</span> <span class="number">79</span> <span class="number">74</span> <span class="number">77</span> <span class="number">57</span> <span class="number">51</span> <span class="number">48</span> <span class="number">59</span>]</span><br><span class="line">[<span class="string">&#x27;二哥&#x27;</span> <span class="number">113</span> <span class="number">103</span> <span class="number">135</span> <span class="number">67</span> <span class="number">52</span> <span class="number">60</span> <span class="number">50</span> <span class="number">51</span> <span class="number">48</span> <span class="number">64</span>]</span><br><span class="line">[<span class="string">&#x27;如意&#x27;</span> <span class="number">98</span> <span class="number">67</span> <span class="number">90</span> <span class="number">45</span> <span class="number">58</span> <span class="number">64</span> <span class="number">59</span> <span class="number">62</span> <span class="number">49</span> <span class="number">67</span>]</span><br><span class="line">我是可爱的分隔符~</span><br><span class="line">我是可爱的分隔符~</span><br><span class="line">   姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">145</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br><span class="line"><span class="number">2</span>  地心  <span class="number">103</span>  <span class="number">143</span>  <span class="number">134</span>  <span class="number">95</span>  <span class="number">64</span>  <span class="number">93</span>  <span class="number">41</span>  <span class="number">69</span>  <span class="number">42</span>  <span class="number">60</span></span><br><span class="line"><span class="number">3</span>  琐碎  <span class="number">125</span>  <span class="number">134</span>  <span class="number">119</span>  <span class="number">68</span>  <span class="number">52</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">84</span>  <span class="number">65</span>  <span class="number">88</span></span><br><span class="line"><span class="number">4</span>  石宝  <span class="number">118</span>  <span class="number">122</span>  <span class="number">105</span>  <span class="number">79</span>  <span class="number">74</span>  <span class="number">77</span>  <span class="number">57</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">59</span></span><br><span class="line"><span class="number">5</span>  二哥  <span class="number">113</span>  <span class="number">103</span>  <span class="number">135</span>  <span class="number">67</span>  <span class="number">52</span>  <span class="number">60</span>  <span class="number">50</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">64</span></span><br><span class="line"><span class="number">6</span>  如意   <span class="number">98</span>   <span class="number">67</span>   <span class="number">90</span>  <span class="number">45</span>  <span class="number">58</span>  <span class="number">64</span>  <span class="number">59</span>  <span class="number">62</span>  <span class="number">49</span>  <span class="number">67</span></span><br><span class="line">我是可爱的分隔符~</span><br><span class="line">     <span class="number">0</span>    <span class="number">1</span>    <span class="number">2</span>    <span class="number">3</span>    <span class="number">4</span>    <span class="number">5</span>   <span class="number">6</span></span><br><span class="line">姓名  高明   章鱼   地心   琐碎   石宝   二哥  如意</span><br><span class="line">语文  <span class="number">93</span>  <span class="number">109</span>  <span class="number">103</span>  <span class="number">125</span>  <span class="number">118</span>  <span class="number">113</span>  <span class="number">98</span></span><br><span class="line">数学  <span class="number">98</span>  <span class="number">145</span>  <span class="number">143</span>  <span class="number">134</span>  <span class="number">122</span>  <span class="number">103</span>  <span class="number">67</span></span><br><span class="line">英语  <span class="number">96</span>  <span class="number">105</span>  <span class="number">134</span>  <span class="number">119</span>  <span class="number">105</span>  <span class="number">135</span>  <span class="number">90</span></span><br><span class="line">物理  <span class="number">43</span>   <span class="number">58</span>   <span class="number">95</span>   <span class="number">68</span>   <span class="number">79</span>   <span class="number">67</span>  <span class="number">45</span></span><br><span class="line">化学  <span class="number">74</span>   <span class="number">41</span>   <span class="number">64</span>   <span class="number">52</span>   <span class="number">74</span>   <span class="number">52</span>  <span class="number">58</span></span><br><span class="line">生物  <span class="number">71</span>   <span class="number">78</span>   <span class="number">93</span>   <span class="number">78</span>   <span class="number">77</span>   <span class="number">60</span>  <span class="number">64</span></span><br><span class="line">历史  <span class="number">66</span>   <span class="number">52</span>   <span class="number">41</span>   <span class="number">52</span>   <span class="number">57</span>   <span class="number">50</span>  <span class="number">59</span></span><br><span class="line">地理  <span class="number">57</span>   <span class="number">63</span>   <span class="number">69</span>   <span class="number">84</span>   <span class="number">51</span>   <span class="number">51</span>  <span class="number">62</span></span><br><span class="line">政治  <span class="number">44</span>   <span class="number">41</span>   <span class="number">42</span>   <span class="number">65</span>   <span class="number">48</span>   <span class="number">48</span>  <span class="number">49</span></span><br><span class="line">技术  <span class="number">85</span>   <span class="number">78</span>   <span class="number">60</span>   <span class="number">88</span>   <span class="number">59</span>   <span class="number">64</span>  <span class="number">67</span></span><br></pre></td></tr></table></figure>
+
+<p>我提醒一下，在DataFrame里面，很多函数都不会直接作用于执行对象，而是返回另一个对象。就像上面的例子中，虽然执行过df1.T，但事实上没有输出，并且df1中的数据也没有改变，因为它返回了一个对象。</p>
+<blockquote>
+<p>说明: append(、drop(丽数均不改变原有df对象中的数据，而是通过返回另一个DataFrame对象来存放改变后的数据。</p>
+</blockquote>
+<h2 id="引用、更改DataFrame中的数据"><a href="#引用、更改DataFrame中的数据" class="headerlink" title="引用、更改DataFrame中的数据"></a>引用、更改DataFrame中的数据</h2><p>不抄课本了，举例子举例子。</p>
+<h3 id="通过属性检索列"><a href="#通过属性检索列" class="headerlink" title="通过属性检索列"></a>通过属性检索列</h3><p>高明同学想看有哪些同学参与成绩分析，于是她输入代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.姓名)     <span class="comment">#通过属性检索列</span></span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span>    高明</span><br><span class="line"><span class="number">1</span>    章鱼</span><br><span class="line"><span class="number">2</span>    地心</span><br><span class="line"><span class="number">3</span>    琐碎</span><br><span class="line"><span class="number">4</span>    石宝</span><br><span class="line"><span class="number">5</span>    二哥</span><br><span class="line"><span class="number">6</span>    如意</span><br><span class="line">Name: 姓名, dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="通过字典记法检索"><a href="#通过字典记法检索" class="headerlink" title="通过字典记法检索"></a>通过字典记法检索</h3><p>列她还可以这么输入代码：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1[<span class="string">&quot;姓名&quot;</span>])    <span class="comment">#通过字典记法检索列</span></span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">0</span>    高明</span><br><span class="line"><span class="number">1</span>    章鱼</span><br><span class="line"><span class="number">2</span>    地心</span><br><span class="line"><span class="number">3</span>    琐碎</span><br><span class="line"><span class="number">4</span>    石宝</span><br><span class="line"><span class="number">5</span>    二哥</span><br><span class="line"><span class="number">6</span>    如意</span><br><span class="line">Name: 姓名, dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<p>两种方法都是检索“姓名”这个columns里的所有数据。</p>
+<p>还可以只查看前面几位同学的名字，那就得这样输入：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.姓名[<span class="number">1</span>])</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;我是可爱的分隔符~&quot;</span>)</span><br><span class="line"><span class="built_in">print</span>(df1[<span class="string">&quot;姓名&quot;</span>][<span class="number">1</span>:<span class="number">3</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">章鱼</span><br><span class="line">我是可爱的分隔符~</span><br><span class="line"><span class="number">1</span>    章鱼</span><br><span class="line"><span class="number">2</span>    地心</span><br><span class="line">Name: 姓名, dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="按columns来更改数据"><a href="#按columns来更改数据" class="headerlink" title="按columns来更改数据"></a>按columns来更改数据</h3><p>老师发现如意同学的成绩输错了，化学成绩多加了十分，所以要更改数据。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">df1.化学=[<span class="number">74</span>,<span class="number">41</span>,<span class="number">64</span>,<span class="number">52</span>,<span class="number">74</span>,<span class="number">52</span>,<span class="number">48</span>]</span><br><span class="line"><span class="built_in">print</span>(df1[df1[<span class="string">&#x27;姓名&#x27;</span>]==<span class="string">&#x27;如意&#x27;</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">   姓名  语文  数学  英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">6</span>  如意  <span class="number">98</span>  <span class="number">67</span>  <span class="number">90</span>  <span class="number">45</span>  <span class="number">48</span>  <span class="number">64</span>  <span class="number">59</span>  <span class="number">62</span>  <span class="number">49</span>  <span class="number">67</span></span><br></pre></td></tr></table></figure>
+
+<p>可以看到，老师把成绩改回来了。</p>
+<h3 id="检索条件"><a href="#检索条件" class="headerlink" title="检索条件"></a>检索条件</h3><p>提醒一下，引用符合条件的值，需要这样引用：<code>print(df1[df1[&#39;姓名&#39;]==&#39;如意&#39;])</code><br>如果需要多个全部符合条件的值（和），需要这样引用：<code>print(df1[(df1[&#39;姓名&#39;]==&#39;如意&#39;) &amp; (df1[&#39;化学&#39;]==48)])</code><br>如果需要检索符合其中一个条件的值（或），需要这样引用：<code>print(df1[(df1[&#39;姓名&#39;]==&#39;如意&#39;) | (df1[&#39;政治&#39;]==48)])</code><br>多个条件的时候，每个条件都要用小括号括起来！！！<br>老师需要查找如意同学或政治考48的同学：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1[(df1[<span class="string">&#x27;姓名&#x27;</span>]==<span class="string">&#x27;如意&#x27;</span>) | (df1[<span class="string">&#x27;政治&#x27;</span>]==<span class="number">48</span>)])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">   姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">4</span>  石宝  <span class="number">118</span>  <span class="number">122</span>  <span class="number">105</span>  <span class="number">79</span>  <span class="number">74</span>  <span class="number">77</span>  <span class="number">57</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">59</span></span><br><span class="line"><span class="number">5</span>  二哥  <span class="number">113</span>  <span class="number">103</span>  <span class="number">135</span>  <span class="number">67</span>  <span class="number">52</span>  <span class="number">60</span>  <span class="number">50</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">64</span></span><br><span class="line"><span class="number">6</span>  如意   <span class="number">98</span>   <span class="number">67</span>   <span class="number">90</span>  <span class="number">45</span>  <span class="number">48</span>  <span class="number">64</span>  <span class="number">59</span>  <span class="number">62</span>  <span class="number">49</span>  <span class="number">67</span></span><br></pre></td></tr></table></figure>
+
+<p>啊哈，还有石宝和二哥政治考了48。</p>
+<p>如果没有符合检索条件的项，那么就会输出空的DataFrame：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1[(df1[<span class="string">&#x27;姓名&#x27;</span>]==<span class="string">&#x27;如意&#x27;</span>) &amp; (df1[<span class="string">&#x27;政治&#x27;</span>]==<span class="number">48</span>)])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">Empty DataFrame</span><br><span class="line">Columns: [姓名, 语文, 数学, 英语, 物理, 化学, 生物, 历史, 地理, 政治, 技术]</span><br><span class="line">Index: []</span><br></pre></td></tr></table></figure>
+
+<p>当然我们还可以找找数学不及格的同学，这个时候“&#x3D;&#x3D;”符号就改成了“&lt;”符号：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1[df1[<span class="string">&#x27;数学&#x27;</span>]&lt;<span class="number">90</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">   姓名  语文  数学  英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">6</span>  如意  <span class="number">98</span>  <span class="number">67</span>  <span class="number">90</span>  <span class="number">45</span>  <span class="number">48</span>  <span class="number">64</span>  <span class="number">59</span>  <span class="number">62</span>  <span class="number">49</span>  <span class="number">67</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="at-函数"><a href="#at-函数" class="headerlink" title="at[]函数"></a>at[]函数</h3><p>章鱼想查一下自己数学考了多少，那么我们需要用到at[]函数：（当然章鱼同学已经知道了自己的索引号）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.at[<span class="number">1</span>,<span class="string">&#x27;数学&#x27;</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">145</span></span><br></pre></td></tr></table></figure>
+
+<p>哇，章鱼真的是数学学霸！！！<br>章鱼同学在数学竞赛中荣获二等奖，学校决定在他的数学成绩上加5分：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df1.at[<span class="number">1</span>,<span class="string">&#x27;数学&#x27;</span>] = <span class="number">150</span> </span><br><span class="line"><span class="built_in">print</span>(df1.at[<span class="number">1</span>,<span class="string">&#x27;数学&#x27;</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line"><span class="number">150</span></span><br></pre></td></tr></table></figure>
+
+<p>所以还可以使用at函数直接修改单个值，省去了整列或者整行数据输入的麻烦。</p>
+<h2 id="DataFrame常用函数介绍"><a href="#DataFrame常用函数介绍" class="headerlink" title="DataFrame常用函数介绍"></a>DataFrame常用函数介绍</h2><p>嘘<del>我又抄课本了</del></p>
+<table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>count()</td>
+<td>返回非空(NaN)数据项的数量</td>
+</tr>
+<tr>
+<td>sum()、mean()</td>
+<td>求和、求平均值，通过axis&#x3D;0&#x2F;1 确定行列</td>
+</tr>
+<tr>
+<td>max()、min()</td>
+<td>返回最大、最小值</td>
+</tr>
+<tr>
+<td>describe()</td>
+<td>返回各列的基本描述统计值，包含计数、平均数、标准差、最大值、最小值及4分位差</td>
+</tr>
+<tr>
+<td>head()、tail()</td>
+<td>返回DataFrame的前n个、后n个数据记录</td>
+</tr>
+<tr>
+<td>groupby()</td>
+<td>对各列或各行中的数据进行分组，然后可对其中每一组数据进行不同的操作</td>
+</tr>
+<tr>
+<td>sort_ values()</td>
+<td>排序，通过axis&#x3D;0&#x2F;1 确定行列</td>
+</tr>
+<tr>
+<td>drop()</td>
+<td>删除数据，通过axis&#x3D;0&#x2F;1确定行列</td>
+</tr>
+<tr>
+<td>append()</td>
+<td>在指定元素的结尾插入内容</td>
+</tr>
+<tr>
+<td>insert()</td>
+<td>在指定位置插入列</td>
+</tr>
+<tr>
+<td>rename()</td>
+<td>修改列名或者索引</td>
+</tr>
+<tr>
+<td>concat()</td>
+<td>合并DataFrame对象</td>
+</tr>
+<tr>
+<td>set_ value()</td>
+<td>根据行标签和列标签设置单个值</td>
+</tr>
+<tr>
+<td>plot()</td>
+<td>绘图</td>
+</tr>
+</tbody></table>
+<h3 id="count-函数"><a href="#count-函数" class="headerlink" title="count()函数"></a>count()函数</h3><p>老师检查一下有没有人缺考，就用count()，如果每门课考试人数都是7，或者每个人考试次数都是11，那么就没有同学缺考。表格中已经写得很清楚了，统计非空数据项的个数。当然它可以以index为坐标统计，也可以以columns为坐标统计。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.count())                <span class="comment">#统计每个column下的数据 </span></span><br><span class="line"><span class="built_in">print</span>(df1.count(axis=<span class="string">&#x27;columns&#x27;</span>))  <span class="comment">#统计每个index下的数据 </span></span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">姓名    <span class="number">7</span></span><br><span class="line">语文    <span class="number">7</span></span><br><span class="line">数学    <span class="number">7</span></span><br><span class="line">英语    <span class="number">7</span></span><br><span class="line">物理    <span class="number">7</span></span><br><span class="line">化学    <span class="number">7</span></span><br><span class="line">生物    <span class="number">7</span></span><br><span class="line">历史    <span class="number">7</span></span><br><span class="line">地理    <span class="number">7</span></span><br><span class="line">政治    <span class="number">7</span></span><br><span class="line">技术    <span class="number">7</span></span><br><span class="line">dtype: int64</span><br><span class="line"><span class="number">0</span>    <span class="number">11</span></span><br><span class="line"><span class="number">1</span>    <span class="number">11</span></span><br><span class="line"><span class="number">2</span>    <span class="number">11</span></span><br><span class="line"><span class="number">3</span>    <span class="number">11</span></span><br><span class="line"><span class="number">4</span>    <span class="number">11</span></span><br><span class="line"><span class="number">5</span>    <span class="number">11</span></span><br><span class="line"><span class="number">6</span>    <span class="number">11</span></span><br><span class="line">dtype: int64</span><br></pre></td></tr></table></figure>
+
+<h3 id="sum-和mean-函数"><a href="#sum-和mean-函数" class="headerlink" title="sum()和mean()函数"></a>sum()和mean()函数</h3><p>老师统计一下每个人的总分和每门课的平均分。这里我们会用到sum()和mean()函数。默认中，这两个函数都是对每个columns取和&#x2F;平均值，也就是默认axis&#x3D;0。如果要对每个index取和&#x2F;平均值，axis就要&#x3D;1，或者axis&#x3D;’columns’</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.<span class="built_in">sum</span>(axis=<span class="number">1</span>))</span><br><span class="line"><span class="comment">#当然还可以这样写：print(df1.sum(axis=&#x27;columns&#x27;))</span></span><br><span class="line"><span class="built_in">print</span>(df1.mean())</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">c:\Users\Administrator\Desktop\pandas_text.py:<span class="number">26</span>: FutureWarning: Dropping of nuisance columns <span class="keyword">in</span> DataFrame reductions (<span class="keyword">with</span> <span class="string">&#x27;numeric_only=None&#x27;</span>) <span class="keyword">is</span> deprecated; <span class="keyword">in</span> a future version this will <span class="keyword">raise</span> TypeError.  Select only valid columns before calling the reduction.</span><br><span class="line">  <span class="built_in">print</span>(df1.<span class="built_in">sum</span>(axis=<span class="number">1</span>))</span><br><span class="line"><span class="number">0</span>    <span class="number">727</span></span><br><span class="line"><span class="number">1</span>    <span class="number">775</span></span><br><span class="line"><span class="number">2</span>    <span class="number">844</span></span><br><span class="line"><span class="number">3</span>    <span class="number">865</span></span><br><span class="line"><span class="number">4</span>    <span class="number">790</span></span><br><span class="line"><span class="number">5</span>    <span class="number">743</span></span><br><span class="line"><span class="number">6</span>    <span class="number">649</span></span><br><span class="line">dtype: int64</span><br><span class="line">c:\Users\Administrator\Desktop\pandas_text.py:<span class="number">27</span>: FutureWarning: Dropping of nuisance columns <span class="keyword">in</span> DataFrame reductions (<span class="keyword">with</span> <span class="string">&#x27;numeric_only=None&#x27;</span>) <span class="keyword">is</span> deprecated; <span class="keyword">in</span> a future version this will <span class="keyword">raise</span> TypeError.  Select only valid columns before calling the reduction.</span><br><span class="line">  <span class="built_in">print</span>(df1.mean())</span><br><span class="line">语文    <span class="number">108.428571</span></span><br><span class="line">数学    <span class="number">116.714286</span></span><br><span class="line">英语    <span class="number">112.000000</span></span><br><span class="line">物理     <span class="number">65.000000</span></span><br><span class="line">化学     <span class="number">57.857143</span></span><br><span class="line">生物     <span class="number">74.428571</span></span><br><span class="line">历史     <span class="number">53.857143</span></span><br><span class="line">地理     <span class="number">62.428571</span></span><br><span class="line">政治     <span class="number">48.142857</span></span><br><span class="line">技术     <span class="number">71.571429</span></span><br><span class="line">dtype: float64</span><br></pre></td></tr></table></figure>
+
+<h3 id="max-、min-函数"><a href="#max-、min-函数" class="headerlink" title="max()、min()函数"></a>max()、min()函数</h3><p>老师查看每个门课的最高分和最低分。默认axis&#x3D;0.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.<span class="built_in">min</span>())</span><br><span class="line"><span class="built_in">print</span>(df1.<span class="built_in">max</span>())</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">姓名    二哥</span><br><span class="line">语文    <span class="number">93</span></span><br><span class="line">数学    <span class="number">67</span></span><br><span class="line">英语    <span class="number">90</span></span><br><span class="line">物理    <span class="number">43</span></span><br><span class="line">化学    <span class="number">41</span></span><br><span class="line">生物    <span class="number">60</span></span><br><span class="line">历史    <span class="number">41</span></span><br><span class="line">地理    <span class="number">51</span></span><br><span class="line">政治    <span class="number">41</span></span><br><span class="line">技术    <span class="number">59</span></span><br><span class="line">dtype: <span class="built_in">object</span></span><br><span class="line">姓名     高明</span><br><span class="line">语文    <span class="number">125</span></span><br><span class="line">数学    <span class="number">150</span></span><br><span class="line">英语    <span class="number">135</span></span><br><span class="line">物理     <span class="number">95</span></span><br><span class="line">化学     <span class="number">74</span></span><br><span class="line">生物     <span class="number">93</span></span><br><span class="line">历史     <span class="number">66</span></span><br><span class="line">地理     <span class="number">84</span></span><br><span class="line">政治     <span class="number">65</span></span><br><span class="line">技术     <span class="number">88</span></span><br><span class="line">dtype: <span class="built_in">object</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="describe-函数"><a href="#describe-函数" class="headerlink" title="describe()函数"></a>describe()函数</h3><p><del>这个函数考试就不会来考了吧</del>describe函数返回的是一个DataFrame对象，当然也可以用和df1一样的函数print(df1.describe().describe())，但是这样就很没意义了（滑稽）。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.describe())</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">               语文          数学         英语         物理         化学         生物         历史         地理         政治         技术</span><br><span class="line">count    <span class="number">7.000000</span>    <span class="number">7.000000</span>    <span class="number">7.00000</span>   <span class="number">7.000000</span>   <span class="number">7.000000</span>   <span class="number">7.000000</span>   <span class="number">7.000000</span>   <span class="number">7.000000</span>   <span class="number">7.000000</span>   <span class="number">7.000000</span></span><br><span class="line">mean   <span class="number">108.428571</span>  <span class="number">116.714286</span>  <span class="number">112.00000</span>  <span class="number">65.000000</span>  <span class="number">57.857143</span>  <span class="number">74.428571</span>  <span class="number">53.857143</span>  <span class="number">62.428571</span>  <span class="number">48.142857</span>  <span class="number">71.571429</span></span><br><span class="line">std     <span class="number">11.282097</span>   <span class="number">29.255850</span>   <span class="number">17.79513</span>  <span class="number">18.448125</span>  <span class="number">12.966991</span>  <span class="number">10.845232</span>   <span class="number">7.861903</span>  <span class="number">11.544943</span>   <span class="number">8.071113</span>  <span class="number">11.984116</span></span><br><span class="line"><span class="built_in">min</span>     <span class="number">93.000000</span>   <span class="number">67.000000</span>   <span class="number">90.00000</span>  <span class="number">43.000000</span>  <span class="number">41.000000</span>  <span class="number">60.000000</span>  <span class="number">41.000000</span>  <span class="number">51.000000</span>  <span class="number">41.000000</span>  <span class="number">59.000000</span></span><br><span class="line"><span class="number">25</span>%    <span class="number">100.500000</span>  <span class="number">100.500000</span>  <span class="number">100.50000</span>  <span class="number">51.500000</span>  <span class="number">50.000000</span>  <span class="number">67.500000</span>  <span class="number">51.000000</span>  <span class="number">54.000000</span>  <span class="number">43.000000</span>  <span class="number">62.000000</span></span><br><span class="line"><span class="number">50</span>%    <span class="number">109.000000</span>  <span class="number">122.000000</span>  <span class="number">105.00000</span>  <span class="number">67.000000</span>  <span class="number">52.000000</span>  <span class="number">77.000000</span>  <span class="number">52.000000</span>  <span class="number">62.000000</span>  <span class="number">48.000000</span>  <span class="number">67.000000</span></span><br><span class="line"><span class="number">75</span>%    <span class="number">115.500000</span>  <span class="number">138.500000</span>  <span class="number">126.50000</span>  <span class="number">73.500000</span>  <span class="number">69.000000</span>  <span class="number">78.000000</span>  <span class="number">58.000000</span>  <span class="number">66.000000</span>  <span class="number">48.500000</span>  <span class="number">81.500000</span></span><br><span class="line"><span class="built_in">max</span>    <span class="number">125.000000</span>  <span class="number">150.000000</span>  <span class="number">135.00000</span>  <span class="number">95.000000</span>  <span class="number">74.000000</span>  <span class="number">93.000000</span>  <span class="number">66.000000</span>  <span class="number">84.000000</span>  <span class="number">65.000000</span>  <span class="number">88.000000</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="head-、tail-函数"><a href="#head-、tail-函数" class="headerlink" title="head()、tail()函数"></a>head()、tail()函数</h3><p>这个是常考点。head()、tail()函数分别返回DataFrame的首&#x2F;末几行。使用的时候也可以用<code>df[:3]</code>或者<code>df[:-4]</code>输出前&#x2F;后3行内容。</p>
+<p>如果<code>head()</code>中没有任何数字，那么默认是返回前5行。如果<code>head()</code>中是负数，比如<code>head(-2)</code>，那就相当与<code>df[:-2]</code>。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">print</span>(df1.head())</span><br><span class="line"><span class="built_in">print</span>(df1.head(<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(df1.head(-<span class="number">2</span>))</span><br><span class="line"><span class="built_in">print</span>(df1[:<span class="number">2</span>])</span><br><span class="line"></span><br><span class="line">输出结果：</span><br><span class="line">   姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">150</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br><span class="line"><span class="number">2</span>  地心  <span class="number">103</span>  <span class="number">143</span>  <span class="number">134</span>  <span class="number">95</span>  <span class="number">64</span>  <span class="number">93</span>  <span class="number">41</span>  <span class="number">69</span>  <span class="number">42</span>  <span class="number">60</span></span><br><span class="line"><span class="number">3</span>  琐碎  <span class="number">125</span>  <span class="number">134</span>  <span class="number">119</span>  <span class="number">68</span>  <span class="number">52</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">84</span>  <span class="number">65</span>  <span class="number">88</span></span><br><span class="line"><span class="number">4</span>  石宝  <span class="number">118</span>  <span class="number">122</span>  <span class="number">105</span>  <span class="number">79</span>  <span class="number">74</span>  <span class="number">77</span>  <span class="number">57</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">59</span></span><br><span class="line">   姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">150</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br><span class="line">   姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">150</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br><span class="line"><span class="number">2</span>  地心  <span class="number">103</span>  <span class="number">143</span>  <span class="number">134</span>  <span class="number">95</span>  <span class="number">64</span>  <span class="number">93</span>  <span class="number">41</span>  <span class="number">69</span>  <span class="number">42</span>  <span class="number">60</span></span><br><span class="line"><span class="number">3</span>  琐碎  <span class="number">125</span>  <span class="number">134</span>  <span class="number">119</span>  <span class="number">68</span>  <span class="number">52</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">84</span>  <span class="number">65</span>  <span class="number">88</span></span><br><span class="line"><span class="number">4</span>  石宝  <span class="number">118</span>  <span class="number">122</span>  <span class="number">105</span>  <span class="number">79</span>  <span class="number">74</span>  <span class="number">77</span>  <span class="number">57</span>  <span class="number">51</span>  <span class="number">48</span>  <span class="number">59</span></span><br><span class="line">   姓名   语文   数学   英语  物理  化学  生物  历史  地理  政治  技术</span><br><span class="line"><span class="number">0</span>  高明   <span class="number">93</span>   <span class="number">98</span>   <span class="number">96</span>  <span class="number">43</span>  <span class="number">74</span>  <span class="number">71</span>  <span class="number">66</span>  <span class="number">57</span>  <span class="number">44</span>  <span class="number">85</span></span><br><span class="line"><span class="number">1</span>  章鱼  <span class="number">109</span>  <span class="number">150</span>  <span class="number">105</span>  <span class="number">58</span>  <span class="number">41</span>  <span class="number">78</span>  <span class="number">52</span>  <span class="number">63</span>  <span class="number">41</span>  <span class="number">78</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://blog.nanyan.cc">南岩</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://blog.nanyan.cc/posts/9358.html">https://blog.nanyan.cc/posts/9358.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://blog.nanyan.cc" target="_blank">南岩 のBlog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Python/">Python</a><a class="post-meta__tags" href="/tags/Pandas/">Pandas</a></div><div class="post_share"><div class="social-share" data-image="https://s1.ax1x.com/2022/05/18/OIIkVA.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="/pluginsSrc/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/posts/32690.html" title="HTML/CSS小记"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.jsdelivr.net/gh/HenryHe613/Pic//20220403/202204141041738.png" onerror="onerror=null;src='https://atasgayb.coding.net/p/public/d/nothing-but-scip/git/raw/master/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">HTML/CSS小记</div></div></a></div><div class="next-post pull-right"><a href="/posts/f3a0.html" title="申请Freenom免费顶级域名的正确做法"><img class="cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/08/03/vZV4Te.png" onerror="onerror=null;src='https://atasgayb.coding.net/p/public/d/nothing-but-scip/git/raw/master/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">申请Freenom免费顶级域名的正确做法</div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://s1.ax1x.com/2022/05/18/OI5XU1.jpg" onerror="this.onerror=null;this.src='https://atasgayb.coding.net/p/public/d/nothing-but-scip/git/raw/master/404.jpg'" alt="avatar"/></div><div class="author-info__name">南岩</div><div class="author-info__description">遨游知乎Github</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">9</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">4</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">2</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/HenryHe613"><i class="fab fa-github"></i><span>Star Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/HenryHe613" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:henryhe613@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://www.zhihu.com/people/atasgayb/" target="_blank" title="知乎"><i class="fa-brands fa-zhihu"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%BC%E5%85%A5Pandas%E6%A8%A1%E5%9D%97"><span class="toc-number">1.</span> <span class="toc-text">导入Pandas模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Series%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-number">2.</span> <span class="toc-text">Series子模块</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#DataFrame%E5%AD%90%E6%A8%A1%E5%9D%97"><span class="toc-number">3.</span> <span class="toc-text">DataFrame子模块</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9E%84%E5%BB%BADataFrame%E5%AF%B9%E8%B1%A1"><span class="toc-number">3.1.</span> <span class="toc-text">构建DataFrame对象</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8E%E5%A4%96%E9%83%A8%E6%95%B0%E6%8D%AE%E6%9E%84%E5%BB%BADataFrame"><span class="toc-number">3.2.</span> <span class="toc-text">从外部数据构建DataFrame</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E5%87%BADataFrame%E6%95%B0%E6%8D%AE"><span class="toc-number">3.3.</span> <span class="toc-text">导出DataFrame数据</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E5%AF%B9%E8%B1%A1%E5%B8%B8%E7%94%A8%E5%B1%9E%E6%80%A7"><span class="toc-number">3.4.</span> <span class="toc-text">DataFrame对象常用属性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%99%E4%B8%80%E5%B0%8F%E8%8A%82%E5%B0%B1%E6%98%AF%E6%8A%84%E8%AF%BE%E6%9C%AC%E5%95%A6%E5%98%BF%E5%98%BF"><span class="toc-number">3.5.</span> <span class="toc-text">这一小节就是抄课本啦嘿嘿</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E7%94%A8%E3%80%81%E6%9B%B4%E6%94%B9DataFrame%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-number">3.6.</span> <span class="toc-text">引用、更改DataFrame中的数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%B1%9E%E6%80%A7%E6%A3%80%E7%B4%A2%E5%88%97"><span class="toc-number">3.6.1.</span> <span class="toc-text">通过属性检索列</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%80%9A%E8%BF%87%E5%AD%97%E5%85%B8%E8%AE%B0%E6%B3%95%E6%A3%80%E7%B4%A2"><span class="toc-number">3.6.2.</span> <span class="toc-text">通过字典记法检索</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%89columns%E6%9D%A5%E6%9B%B4%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-number">3.6.3.</span> <span class="toc-text">按columns来更改数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A3%80%E7%B4%A2%E6%9D%A1%E4%BB%B6"><span class="toc-number">3.6.4.</span> <span class="toc-text">检索条件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#at-%E5%87%BD%E6%95%B0"><span class="toc-number">3.6.5.</span> <span class="toc-text">at[]函数</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#DataFrame%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0%E4%BB%8B%E7%BB%8D"><span class="toc-number">3.7.</span> <span class="toc-text">DataFrame常用函数介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#count-%E5%87%BD%E6%95%B0"><span class="toc-number">3.7.1.</span> <span class="toc-text">count()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#sum-%E5%92%8Cmean-%E5%87%BD%E6%95%B0"><span class="toc-number">3.7.2.</span> <span class="toc-text">sum()和mean()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#max-%E3%80%81min-%E5%87%BD%E6%95%B0"><span class="toc-number">3.7.3.</span> <span class="toc-text">max()、min()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#describe-%E5%87%BD%E6%95%B0"><span class="toc-number">3.7.4.</span> <span class="toc-text">describe()函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#head-%E3%80%81tail-%E5%87%BD%E6%95%B0"><span class="toc-number">3.7.5.</span> <span class="toc-text">head()、tail()函数</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/32690.html" title="HTML/CSS小记">HTML/CSS小记</a><time datetime="2023-01-24T13:33:58.996Z" title="更新于 2023-01-24 13:33:58">2023-01-24</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/26060.html" title="普高语文必修重点文言文译文">普高语文必修重点文言文译文</a><time datetime="2022-06-07T16:08:23.000Z" title="更新于 2022-06-07 16:08:23">2022-06-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/f3a0.html" title="申请Freenom免费顶级域名的正确做法">申请Freenom免费顶级域名的正确做法</a><time datetime="2022-05-20T15:48:00.000Z" title="更新于 2022-05-20 15:48:00">2022-05-20</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/9358.html" title="Pandas模块：高中技术备考看这个就够了！">Pandas模块：高中技术备考看这个就够了！</a><time datetime="2022-05-19T15:41:00.000Z" title="更新于 2022-05-19 15:41:00">2022-05-19</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/posts/12196.html" title="勒内·笛卡尔 名言">勒内·笛卡尔 名言</a><time datetime="2022-03-26T22:12:00.000Z" title="更新于 2022-03-26 22:12:00">2022-03-26</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://s1.ax1x.com/2022/05/18/OIIkVA.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2023 By 南岩</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text"><a href="https://icp.gov.moe/?keyword=20221248" target="_blank">萌ICP备20221248号</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/pluginsSrc/@fancyapps/ui/dist/fancybox.umd.js"></script><script src="/pluginsSrc/instant.page/instantpage.js" type="module"></script><script src="/pluginsSrc/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/pluginsSrc/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('/pluginsSrc/pangu/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const $mermaidWrap = document.querySelectorAll('#article-container .mermaid-wrap')
+  if ($mermaidWrap.length) {
+    window.runMermaid = () => {
+      window.loadMermaid = true
+      const theme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'default'
+
+      Array.from($mermaidWrap).forEach((item, index) => {
+        const mermaidSrc = item.firstElementChild
+        const mermaidThemeConfig = '%%{init:{ \'theme\':\'' + theme + '\'}}%%\n'
+        const mermaidID = 'mermaid-' + index
+        const mermaidDefinition = mermaidThemeConfig + mermaidSrc.textContent
+        mermaid.mermaidAPI.render(mermaidID, mermaidDefinition, (svgCode) => {
+          mermaidSrc.insertAdjacentHTML('afterend', svgCode)
+        })
+      })
+    }
+
+    const loadMermaid = () => {
+      window.loadMermaid ? runMermaid() : getScript('/pluginsSrc/mermaid/dist/mermaid.min.js').then(runMermaid)
+    }
+
+    window.pjax ? loadMermaid() : document.addEventListener('DOMContentLoaded', loadMermaid)
+  }
+})()</script><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'lpBYhjltDNcEvJWS0SDlSAnQ-9Nh9j0Va',
+      appKey: '6K8crcRfKHrRyTjQUK7sdcRw',
+      avatar: 'mp',
+      serverURLs: '',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('/pluginsSrc/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><link rel="stylesheet" href="/pluginsSrc/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="/pluginsSrc/aplayer/dist/APlayer.min.js"></script><script src="/pluginsSrc/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="/pluginsSrc/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', 'G-PHSQ6569MJ', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
